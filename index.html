@@ -39,7 +39,7 @@
 
       async function connect(code) {
         await peerReady
-        const conn = peer.connect(`readaloud-${code}`, {reliable: true})
+        const conn = peer.connect(`voiceout-${code}`, {reliable: true})
         await new Promise((f,r) => conn.once("open", f).once("error", r))
         conn.on("error", console.error)
         conn.on("data", async req => {
